@@ -107,9 +107,14 @@ public class ButtonTests : MonoBehaviour
 
     void StringChange()
     {
+
+        //moved this here instead so it can play on win states instead of Update
+        //taking up memory just to check a string on update? you must be nuts
+        //print("P1 " + p1Point);
+        //print("P2 " + p2Point);
         string p1String = p1Point.ToString();
-        string p2String = p1Point.ToString();
+        string p2String = p2Point.ToString();
         p1Text.GetComponent<Text>().text = p1String;
-        p1Text.GetComponent<Text>().text = p2String;
+        p2Text.GetComponent<Text>().text = p2String;
     }
 }
