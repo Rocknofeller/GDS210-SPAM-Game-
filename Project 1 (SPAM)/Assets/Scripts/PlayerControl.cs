@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     [Header("Assign Sprite Button")]
     public Sprite defaultImage;
     public Sprite pressedImage;
+    
     [Space(5)]
 
     public KeyCode keyToPress;
@@ -24,9 +25,9 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress))
+        if(Input.GetKeyDown(keyToPress))
         {
-            SRender.sprite = pressedImage;          
+            SRender.sprite = pressedImage;
         }
 
         if (Input.GetKeyUp(keyToPress))

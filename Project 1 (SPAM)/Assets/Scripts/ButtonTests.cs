@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ButtonTests : MonoBehaviour
 {
-    private bool spammable = false;
+    public static bool spammable = false;
     private float oneProgress = 0;
     private float twoProgress = 0;
     public GameObject progOne;
@@ -19,12 +19,10 @@ public class ButtonTests : MonoBehaviour
     private int p1Point = 0;
     private int p2Point = 0;
 
-    
-
     // Start is called before the first frame update
     void Start()
     {
-    
+        
         defText = winnerText.GetComponent<Text>().text;
 
         RoundStart();
@@ -59,6 +57,7 @@ public class ButtonTests : MonoBehaviour
         oneProgress = 0;
         twoProgress = 0;
         winnerText.GetComponent<Text>().text = defText;
+        
     }
 
     void ButtonInputs()
@@ -67,19 +66,17 @@ public class ButtonTests : MonoBehaviour
         //Probably need to find a more efficient way to write these down
         //inputs are determined in Edit>ProjectSettings>InputManager
         //this way the inputs aren't locked to WASD and/or arrow keys
-        //Definitely need to find a more efficient way to write this down and change it on the fly
+        //Definitely need to find a more efficient way to write this down and change it on the fly      
 
-        
         if (Input.GetButtonDown("p1Up") | Input.GetButtonDown("p1Down") | Input.GetButtonDown("p1Left") | Input.GetButtonDown("p1Right"))
         {
-            oneProgress += 0.005f;
+            oneProgress += 0.004f;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             twoProgress += 0.007f;
         }
-        
-          
+
     }
 
     void Winner()
