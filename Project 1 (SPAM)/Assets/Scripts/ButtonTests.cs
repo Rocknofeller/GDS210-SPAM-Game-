@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,10 +19,12 @@ public class ButtonTests : MonoBehaviour
     private int p1Point = 0;
     private int p2Point = 0;
 
+    
 
     // Start is called before the first frame update
     void Start()
     {
+    
         defText = winnerText.GetComponent<Text>().text;
 
         RoundStart();
@@ -30,9 +33,13 @@ public class ButtonTests : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spammable == true) ButtonInputs();
-        
+        if (spammable == true)
+        {
+            ButtonInputs();
+        }
+     
         //These two lines updates the bar
+
         progOne.GetComponent<Image>().fillAmount = oneProgress;
         progTwo.GetComponent<Image>().fillAmount = twoProgress;
 
@@ -62,15 +69,17 @@ public class ButtonTests : MonoBehaviour
         //this way the inputs aren't locked to WASD and/or arrow keys
         //Definitely need to find a more efficient way to write this down and change it on the fly
 
+        
         if (Input.GetButtonDown("p1Up") | Input.GetButtonDown("p1Down") | Input.GetButtonDown("p1Left") | Input.GetButtonDown("p1Right"))
         {
-            oneProgress += 0.01f;
+            oneProgress += 0.005f;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            twoProgress += 0.01f;
+            twoProgress += 0.007f;
         }
-
+        
+          
     }
 
     void Winner()
@@ -78,6 +87,7 @@ public class ButtonTests : MonoBehaviour
         //victory conditions
         //Also stops the loser's progress bar
         //stops spamming entirely
+
         if (oneProgress >= 1 && spammable == true)
         {
             p1Point += 1;
@@ -90,7 +100,7 @@ public class ButtonTests : MonoBehaviour
         {
             p2Point += 1;
             // print("Player 2 Wins");
-            winnerText.GetComponent<Text>().text = "Player 2 Wins\n Press Space to Reset";
+            winnerText.GetComponent<Text>().text = "Player 2 Wins A Pyrrhic Vectory!\n Press Space to Reset";
             StringChange();
             spammable = false;
         }
@@ -107,11 +117,6 @@ public class ButtonTests : MonoBehaviour
 
     void StringChange()
     {
-
-        //moved this here instead so it can play on win states instead of Update
-        //taking up memory just to check a string on update? you must be nuts
-        //print("P1 " + p1Point);
-        //print("P2 " + p2Point);
         string p1String = p1Point.ToString();
         string p2String = p2Point.ToString();
         p1Text.GetComponent<Text>().text = p1String;
