@@ -18,6 +18,7 @@ public class ButtonTests : MonoBehaviour
     public GameObject p2Text;
     private int p1Point = 0;
     private int p2Point = 0;
+    public GameObject simonSays;
 
     // Start is called before the first frame update
     void Start()
@@ -70,11 +71,11 @@ public class ButtonTests : MonoBehaviour
 
         if (Input.GetButtonDown("p1Up") | Input.GetButtonDown("p1Down") | Input.GetButtonDown("p1Left") | Input.GetButtonDown("p1Right"))
         {
-            oneProgress += 0.004f;
+            oneProgress += 0.05f;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            twoProgress += 0.007f;
+            twoProgress += 0.01f;
         }
 
     }

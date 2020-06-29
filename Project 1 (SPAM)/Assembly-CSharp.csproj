@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\ButtonTests.cs" />
     <Compile Include="Assets\Scripts\CountDownStart.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\SimonSays.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Spamgame/GDS210-SPAM-Game-/Project 1 (SPAM)/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
