@@ -1,7 +1,33 @@
-﻿Project 1 (SPAM)/Library/ArtifactDB
-Project 1 (SPAM)/Temp/UnityLockfile
-Project 1 (SPAM)/.vs
-Project 1 (SPAM)
-Project 1 (SPAM)/Library
-Project 1 (SPAM)/Library
-Project 1 (SPAM)/Library/ScriptAssemblies
+# .gitignore
+
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+sysinfo.txt
+*.pidb.meta
+ 
+# VS/Rider/MD/Consulo
+ExportedObj/
+.consulo/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+ 
+# Builds
+*.apk
+*.unitypackage
+*.app
+*.exe
+Project 1 (SPAM)/Temp
